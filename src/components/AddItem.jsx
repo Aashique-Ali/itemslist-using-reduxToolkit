@@ -9,6 +9,9 @@ const AddItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (name === "") {
+      alert("plz enter an item")
+    }
     if (name.trim()) {
       dispatch(addItem({ id: Date.now(), name }))
       setName("")
